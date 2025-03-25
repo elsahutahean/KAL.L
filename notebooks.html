@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Content with notebooks &#8212; My sample book</title>
+    <title>Penyelesaian dengan Metode Invers Matriks &#8212; My sample book</title>
   
   
   
@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -62,8 +62,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Notebooks with MyST Markdown" href="markdown-notebooks.html" />
-    <link rel="prev" title="Markdown Files" href="markdown.html" />
+    <link rel="next" title="&lt;no title&gt;" href="markdown-notebooks.html" />
+    <link rel="prev" title="&lt;no title&gt;" href="markdown.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -155,8 +155,8 @@
       
     
     
-    <img src="_static/logo.png" class="logo__image only-light" alt="My sample book - Home"/>
-    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="My sample book - Home"/>`);</script>
+    <img src="_static/elsa.jpg" class="logo__image only-light" alt="My sample book - Home"/>
+    <script>document.write(`<img src="_static/elsa.jpg" class="logo__image only-dark" alt="My sample book - Home"/>`);</script>
   
   
 </a></div>
@@ -182,9 +182,7 @@
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="markdown.html">Markdown Files</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Content with notebooks</a></li>
-<li class="toctree-l1"><a class="reference internal" href="markdown-notebooks.html">Notebooks with MyST Markdown</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#"><em>Penyelesaian dengan Metode Invers Matriks</em></a></li>
 </ul>
 
     </div>
@@ -370,7 +368,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Content with notebooks</h1>
+    <h1>Penyelesaian dengan Metode Invers Matriks</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -380,9 +378,8 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#markdown-notebooks">Markdown + notebooks</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#myst-markdown">MyST markdown</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#code-blocks-and-outputs">Code blocks and outputs</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mencari-invers-matriks-a"><em>1. Mencari Invers Matriks <span class="math notranslate nohighlight">\(( A )\)</span></em></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kesimpulan"><em>Kesimpulan</em></a></li>
 </ul>
             </nav>
         </div>
@@ -394,83 +391,302 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="content-with-notebooks">
-<h1>Content with notebooks<a class="headerlink" href="#content-with-notebooks" title="Link to this heading">#</a></h1>
-<p>You can also create content with Jupyter Notebooks. This means that you can include
-code blocks and their outputs in your book.</p>
-<section id="markdown-notebooks">
-<h2>Markdown + notebooks<a class="headerlink" href="#markdown-notebooks" title="Link to this heading">#</a></h2>
-<p>As it is markdown, you can embed images, HTML, etc into your posts!</p>
-<p><img alt="" src="https://myst-parser.readthedocs.io/en/latest/_static/logo-wide.svg" /></p>
-<p>You can also <span class="math notranslate nohighlight">\(add_{math}\)</span> and</p>
+  <p>Sistem Persamaan Linier</p>
+<p>Pengertian Dasar Sistem persamaan linear adalah kumpulan dari dua atau lebih persamaan yang memiliki variabel yang sama. Tujuannya adalah mencari nilai
+variabel-variabel tersebut sehingga semua persamaan dalam sistem tersebut terpenuhi.
+Sifat Persamaan Linear
+Ada beberapa sifat-sifat yang dimiliki oleh persamaan linear, yaitu sebagai berikut:</p>
+<ul class="simple">
+<li><p>Penjumlahan dan pengurangan bilangan kedua ruas tak akan mengubah persamaan nilai.</p></li>
+<li><p>Perkalian dan pembagian bilangan kedua ruas tidak mengubah nilai persamaan</p></li>
+<li><p>Nilai persamaan tidak berubah jika kedua ruas ditambah atau dikurangi bilangan yang sama.</p></li>
+<li><p>Suatu persamaan jika dipindah ruas maka penjumlahan berubah jadi pengurangan, perkalian berubah menjadi Pembagian, dan sebaliknya.</p></li>
+</ul>
+<ol class="arabic simple">
+<li><p>Persamaan Linear Satu Variabel
+Sesuai dengan namanya, persamaan linear satu variabel hanya berisi satu variabel berangka 1 yang berbentuk kalimat terbuka dengan dihubungkan tanda =.</p></li>
+<li><p>Persamaan Dua Variabel Linier
+Sesuai dengan namanya , Persamaan Linear Dua Variabel merupakan sistem persamaan dengan variabel yang berisi dua dengan tingkat 1. Persamaan Linear Dua Variabel menggunakan relasi = dan tidak ada perkalian variabel di setiap persamaan.</p></li>
+<li><p>Persamaan Linear Tiga Variabel
+Persamaan linear tiga variabel merupakan bentuk perluasan dari persamaan linear dua variabel. Sama seperti persamaan dua variabel linier, persamaan ini juga dapat diselesaikan dengan dua metode, yaitu substitusi dan eliminasi.</p></li>
+</ol>
+<hr class="docutils" />
+<p>Berikut adalah penyelesaian sistem persamaan linear tiga variabel menggunakan metode eliminasi Gauss dengan format yang lebih rapi dan mudah dipahami.</p>
+<hr class="docutils" />
+<p><strong>1. Kasus Satu Solusi (Solusi Unik)</strong></p>
+<p>Diketahui sistem persamaan:</p>
 <div class="math notranslate nohighlight">
-\[
-math^{blocks}
-\]</div>
-<p>or</p>
+\[\begin{split}   
+\begin{aligned}
+x + y + z &amp;= 6 \\
+2x + 3y + z &amp;= 14 \\ 
+y + 2z &amp;= 8
+\end{aligned}
+\end{split}\]</div>
+<p>Konversi ke matriks augmented:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{bmatrix}
+1 &amp; 1 &amp; 1 &amp;  6 \\
+2 &amp; 3 &amp; 1 &amp;  14 \\
+0 &amp; 1 &amp; 2 &amp;  8
+\end{bmatrix}
+\end{split}\]</div>
+<p><strong>Langkah-langkah Eliminasi Gauss:</strong></p>
+<ol class="arabic simple">
+<li><p>Eliminasi elemen di bawah pivot pertama ( x ):</p>
+<ul class="simple">
+<li><p>Baris 2 → Baris 2 - 2(Baris 1)</p></li>
+</ul>
+</li>
+</ol>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{bmatrix}
+1 &amp; 1 &amp; 1 &amp; 6 \\
+0 &amp; 1 &amp; -1 &amp; 2 \\
+0 &amp; 1 &amp; 2 &amp; 8
+\end{bmatrix}
+\end{split}\]</div>
+<ol class="arabic simple" start="2">
+<li><p>Eliminasi elemen di bawah pivot kedua (( y )):</p>
+<ul class="simple">
+<li><p>Baris 3 → Baris 3 - Baris 2</p></li>
+</ul>
+</li>
+</ol>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{bmatrix}
+1 &amp; 1 &amp; 1 &amp; 6 \\
+0 &amp; 1 &amp; -1 &amp; 2 \\
+0 &amp; 0 &amp; 3 &amp; 6
+\end{bmatrix}
+\end{split}\]</div>
+<ol class="arabic simple" start="3">
+<li><p><strong>Substitusi balik:</strong></p>
+<ul class="simple">
+<li><p>Dari baris ketiga: <span class="math notranslate nohighlight">\(( 3z = 6 \Rightarrow z = 2 )\)</span></p></li>
+<li><p>Dari baris kedua: <span class="math notranslate nohighlight">\(( y - 2 = 2 \Rightarrow y = 4 )\)</span></p></li>
+<li><p>Dari baris pertama: <span class="math notranslate nohighlight">\(( x + 4 + 2 = 6 \Rightarrow x = 0 )\)</span></p></li>
+</ul>
+</li>
+</ol>
+<p><strong>Hasil:</strong></p>
+<p>(x, y, z) = (0, 4, 2)</p>
+<hr class="docutils" />
+<p><strong>2. Kasus Tak Hingga Solusi</strong></p>
+<p>Diketahui sistem persamaan:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{aligned}
-\mbox{mean} la_{tex} \\ \\
-math blocks
+x + y + z &amp;= 6 \\
+2x + 2y + 2z &amp;= 12 \\
+3x + 3y + 3z &amp;= 18
 \end{aligned}
 \end{split}\]</div>
-<p>But make sure you $Escape $your $dollar signs $you want to keep!</p>
-</section>
-<section id="myst-markdown">
-<h2>MyST markdown<a class="headerlink" href="#myst-markdown" title="Link to this heading">#</a></h2>
-<p>MyST markdown works in Jupyter Notebooks as well. For more information about MyST markdown, check
-out <a class="reference external" href="https://jupyterbook.org/content/myst.html">the MyST guide in Jupyter Book</a>,
-or see <a class="reference external" href="https://myst-parser.readthedocs.io/en/latest/">the MyST markdown documentation</a>.</p>
-</section>
-<section id="code-blocks-and-outputs">
-<h2>Code blocks and outputs<a class="headerlink" href="#code-blocks-and-outputs" title="Link to this heading">#</a></h2>
-<p>Jupyter Book will also embed your code blocks and output in your book.
-For example, here’s some sample Matplotlib code:</p>
+<p>Konversi ke matriks augmented:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{bmatrix}
+1 &amp; 1 &amp; 1 &amp;  6 \\
+2 &amp; 2 &amp; 2 &amp;  12 \\
+3 &amp; 3 &amp; 3 &amp;  18
+\end{bmatrix}
+\end{split}\]</div>
+<p><strong>Langkah-langkah Eliminasi Gauss:</strong></p>
+<ol class="arabic simple">
+<li><p>Eliminasi elemen di bawah pivot pertama:</p>
+<ul class="simple">
+<li><p>Baris 2 → Baris 2 - 2(Baris 1)</p></li>
+<li><p>Baris 3 → Baris 3 - 3(Baris 1)</p></li>
+</ul>
+</li>
+</ol>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{bmatrix}
+1 &amp; 1 &amp; 1 &amp;  6 \\
+0 &amp; 0 &amp; 0 &amp;  0 \\
+0 &amp; 0 &amp; 0 &amp;  0
+\end{bmatrix}
+\end{split}\]</div>
+<p>Karena ada <strong>baris nol sepenuhnya</strong>, sistem ini memiliki <strong>tak hingga banyak solusi</strong>.</p>
+<ol class="arabic simple" start="2">
+<li><p><strong>Penyelesaian dalam bentuk parameter:</strong></p>
+<ul class="simple">
+<li><p>Misalkan <span class="math notranslate nohighlight">\(( z = t )\)</span> (variabel bebas)</p></li>
+<li><p>Dari baris pertama: <span class="math notranslate nohighlight">\(( x + y + t = 6 \Rightarrow x + y = 6 - t )\)</span></p></li>
+<li><p>Misalkan <span class="math notranslate nohighlight">\(( y = s ), maka ( x = 6 - s - t )\)</span></p></li>
+</ul>
+</li>
+</ol>
+<p><strong>Hasil (dalam bentuk parameter):</strong></p>
+<div class="math notranslate nohighlight">
+\[
+(x, y, z) = (6 - s - t, s, t), \quad s, t \in \mathbb{R}
+\]</div>
+<hr class="docutils" />
+<p><strong>3. Kasus Tanpa Solusi</strong></p>
+<p>Diketahui sistem persamaan:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+x + y + z &amp;= 6 \\
+2x + 3y + z &amp;= 14 \\
+x + y + z &amp;= 8
+\end{aligned}
+\end{split}\]</div>
+<p>Konversi ke matriks augmented:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{bmatrix}
+1 &amp; 1 &amp; 1 &amp;  6 \\
+2 &amp; 3 &amp; 1 &amp;  14 \\
+1 &amp; 1 &amp; 1 &amp;  8
+\end{bmatrix}
+\end{split}\]</div>
+<p><strong>Langkah-langkah Eliminasi Gauss:</strong></p>
+<ol class="arabic simple">
+<li><p>Eliminasi elemen di bawah pivot pertama:</p>
+<ul class="simple">
+<li><p>Baris 3 → Baris 3 - Baris 1</p></li>
+</ul>
+</li>
+</ol>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{bmatrix}
+1 &amp; 1 &amp; 1 &amp;  6 \\
+2 &amp; 3 &amp; 1 &amp;  14 \\
+0 &amp; 0 &amp; 0 &amp;  2
+\end{bmatrix}
+\end{split}\]</div>
+<p>Baris ketiga menyatakan <strong>0 = 2</strong>, yang merupakan <strong>kontradiksi</strong>.</p>
+<p><strong>Kesimpulan:</strong><br />
+Sistem ini <strong>tidak memiliki solusi</strong>.</p>
+<hr class="docutils" />
+<p><strong>Ringkasan Hasil</strong></p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Jenis Solusi</p></th>
+<th class="head"><p>Bentuk Matriks Setelah Eliminasi</p></th>
+<th class="head"><p>Kesimpulan</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Satu Solusi</strong></p></td>
+<td><p>Pivot di setiap kolom variabel, tanpa kontradiksi</p></td>
+<td><p>( (x, y, z) )unik</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Tak Hingga Solusi</strong></p></td>
+<td><p>Baris nol sepenuhnya, ada variabel bebas</p></td>
+<td><p>Solusi berbentuk parameter</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Tanpa Solusi</strong></p></td>
+<td><p>Baris dengan ( 0 = c ) (c tidak sama dengan 0)</p></td>
+<td><p>Tidak ada solusi</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Metode eliminasi Gauss memudahkan kita dalam mengidentifikasi jenis solusi berdasarkan bentuk matriks setelah eliminasi.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">rcParams</span><span class="p">,</span> <span class="n">cycler</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ion</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mf">1.</span><span class="n">Solusi</span> <span class="n">Tunggal</span>
+<span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">www</span><span class="o">.</span><span class="n">geogebra</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">calculator</span><span class="o">/</span><span class="n">deekkbx3</span>
+
+
+<span class="mf">2.</span><span class="n">Banyak</span> <span class="n">Solusi</span>
+<span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">www</span><span class="o">.</span><span class="n">geogebra</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">calculator</span><span class="o">/</span><span class="n">dnxnd3nh</span>
+
+
+<span class="mf">3.</span><span class="n">Tanpa</span> <span class="n">Solusi</span>
+<span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">www</span><span class="o">.</span><span class="n">geogebra</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">calculator</span><span class="o">/</span><span class="n">rgjww8f</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;contextlib.ExitStack at 0x7ac7aab315b0&gt;
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="g g-Whitespace">    </span><span class="mi">1</span><span class="o">.</span><span class="n">Solusi</span> <span class="n">Tunggal</span>
+     <span class="o">^</span>
+<span class="ne">SyntaxError</span>: invalid decimal literal
 </pre></div>
 </div>
 </div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Fixing random state for reproducibility</span>
-<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">19680801</span><span class="p">)</span>
-
-<span class="n">N</span> <span class="o">=</span> <span class="mi">10</span>
-<span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">logspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span> <span class="o">+</span> <span class="n">ii</span> <span class="k">for</span> <span class="n">ii</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">)]</span>
-<span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">data</span><span class="p">)</span><span class="o">.</span><span class="n">T</span>
-<span class="n">cmap</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">coolwarm</span>
-<span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;axes.prop_cycle&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">cycler</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="n">cmap</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">N</span><span class="p">)))</span>
-
-
-<span class="kn">from</span> <span class="nn">matplotlib.lines</span> <span class="kn">import</span> <span class="n">Line2D</span>
-<span class="n">custom_lines</span> <span class="o">=</span> <span class="p">[</span><span class="n">Line2D</span><span class="p">([</span><span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="n">cmap</span><span class="p">(</span><span class="mf">0.</span><span class="p">),</span> <span class="n">lw</span><span class="o">=</span><span class="mi">4</span><span class="p">),</span>
-                <span class="n">Line2D</span><span class="p">([</span><span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="n">cmap</span><span class="p">(</span><span class="mf">.5</span><span class="p">),</span> <span class="n">lw</span><span class="o">=</span><span class="mi">4</span><span class="p">),</span>
-                <span class="n">Line2D</span><span class="p">([</span><span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="n">cmap</span><span class="p">(</span><span class="mf">1.</span><span class="p">),</span> <span class="n">lw</span><span class="o">=</span><span class="mi">4</span><span class="p">)]</span>
-
-<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
-<span class="n">lines</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">custom_lines</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;Cold&#39;</span><span class="p">,</span> <span class="s1">&#39;Medium&#39;</span><span class="p">,</span> <span class="s1">&#39;Hot&#39;</span><span class="p">]);</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="_images/278d4a495af51f3b5ec6c3b5c8d4b48aeb6e019b7cc3758cfcc9bed0b219cfd7.png" src="_images/278d4a495af51f3b5ec6c3b5c8d4b48aeb6e019b7cc3758cfcc9bed0b219cfd7.png" />
-</div>
-</div>
-<p>There is a lot more that you can do with outputs (such as including interactive outputs)
-with your book. For more information about this, see <a class="reference external" href="https://jupyterbook.org">the Jupyter Book documentation</a></p>
+<section id="penyelesaian-dengan-metode-invers-matriks">
+<h1><em>Penyelesaian dengan Metode Invers Matriks</em><a class="headerlink" href="#penyelesaian-dengan-metode-invers-matriks" title="Link to this heading">#</a></h1>
+<p>Diberikan sistem persamaan linear:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+x_1 + 2x_2 + 3x_3 &amp;= 1 \\
+4x_1 - x_2 + 2x_3 &amp;= 4 \\
+5x_1 + 3x_2 - x_3 &amp;= 5
+\end{aligned}
+\end{split}\]</div>
+<p>Kita tuliskan dalam bentuk matriks:</p>
+<div class="math notranslate nohighlight">
+\[
+A \mathbf{x} = \mathbf{b}
+\]</div>
+<p>dengan:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+A =
+\begin{bmatrix}
+1 &amp; 2 &amp; 3 \\
+4 &amp; -1 &amp; 2 \\
+5 &amp; 3 &amp; -1
+\end{bmatrix}, \quad
+\mathbf{x} =
+\begin{bmatrix}
+x_1 \\ x_2 \\ x_3
+\end{bmatrix}, \quad
+\mathbf{b} =
+\begin{bmatrix}
+1 \\ 4 \\ 5
+\end{bmatrix}
+\end{split}\]</div>
+<p>Karena <span class="math notranslate nohighlight">\(( A )\)</span> memiliki invers, kita dapat mencari solusi dengan:</p>
+<div class="math notranslate nohighlight">
+\[
+\mathbf{x} = A^{-1} \mathbf{b}
+\]</div>
+<section id="mencari-invers-matriks-a">
+<h2><em>1. Mencari Invers Matriks <span class="math notranslate nohighlight">\(( A )\)</span></em><a class="headerlink" href="#mencari-invers-matriks-a" title="Link to this heading">#</a></h2>
+<p>Kita hitung invers dari <span class="math notranslate nohighlight">\(( A )\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+A^{-1} =
+\begin{bmatrix}
+1 &amp; 0 &amp; 0 \\
+0 &amp; 1 &amp; 0 \\
+0 &amp; 0 &amp; 1
+\end{bmatrix}
+\end{split}\]</div>
+<p>Hasil perhitungan menunjukkan bahwa solusi sistem persamaan adalah:</p>
+<div class="math notranslate nohighlight">
+\[
+x_1 = 1, \quad x_2 \approx -8.33 \times 10^{-17}, \quad x_3 \approx -2.78 \times 10^{-17}
+\]</div>
+<p>Nilai <span class="math notranslate nohighlight">\(( x_2 )\)</span> dan <span class="math notranslate nohighlight">\(( x_3 )\)</span> sangat kecil (mendekati nol), yang kemungkinan besar disebabkan oleh kesalahan pembulatan dalam perhitungan numerik. Jadi, solusi akhirnya adalah:</p>
+<div class="math notranslate nohighlight">
+\[
+(x_1, x_2, x_3) = (1, 0, 0)
+\]</div>
+</section>
+<section id="kesimpulan">
+<h2><em>Kesimpulan</em><a class="headerlink" href="#kesimpulan" title="Link to this heading">#</a></h2>
+<p>Sistem persamaan ini memiliki solusi unik:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\mathbf{x} =
+\begin{bmatrix}
+1 \\ 0 \\ 0
+\end{bmatrix}
+\end{split}\]</div>
 </section>
 </section>
 
@@ -510,7 +726,7 @@ with your book. For more information about this, see <a class="reference externa
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Markdown Files</p>
+        <p class="prev-next-title">&lt;no title&gt;</p>
       </div>
     </a>
     <a class="right-next"
@@ -518,7 +734,7 @@ with your book. For more information about this, see <a class="reference externa
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Notebooks with MyST Markdown</p>
+        <p class="prev-next-title">&lt;no title&gt;</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -538,9 +754,8 @@ with your book. For more information about this, see <a class="reference externa
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#markdown-notebooks">Markdown + notebooks</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#myst-markdown">MyST markdown</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#code-blocks-and-outputs">Code blocks and outputs</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mencari-invers-matriks-a"><em>1. Mencari Invers Matriks <span class="math notranslate nohighlight">\(( A )\)</span></em></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kesimpulan"><em>Kesimpulan</em></a></li>
 </ul>
   </nav></div>
 

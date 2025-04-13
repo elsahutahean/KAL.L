@@ -183,7 +183,11 @@
         </ul>
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="markdown.html">Sistem Persamaan Linear</a></li>
+
+
 <li class="toctree-l1 current active"><a class="current reference internal" href="#"><em>Sistem Persamaan Linier</em></a></li>
+
+
 
 <li class="toctree-l1"><a class="reference internal" href="markdown-notebooks.html">Invers Matriks</a></li>
 </ul>
@@ -338,6 +342,24 @@ document.write(`
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#penyelesaian-dengan-metode-invers-matriks"><em>Penyelesaian Dengan Metode Invers Matriks</em></a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mencari-invers-matriks-a"><em>1. Mencari Invers Matriks <span class="math notranslate nohighlight">\(( A )\)</span></em></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kesimpulan"><em>Kesimpulan</em></a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#ringkasan-materi-transformasi-linear-dan-matriks-standar">Ringkasan Materi: Transformasi Linear dan Matriks Standar</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transformasi-linear">1. Transformasi Linear</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-transformasi-linear">2. Contoh Transformasi Linear</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transformasi-yang-bukan-linear">3. Transformasi yang Bukan Linear</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matriks-standar-dari-transformasi-linear">4. Matriks Standar dari Transformasi Linear</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#komposisi-transformasi-linear">5. Komposisi Transformasi Linear</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sifat-transformasi-linear">6. Sifat Transformasi Linear</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#geometri-transformasi-linear">7. Geometri Transformasi Linear</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">8. Kesimpulan</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#jawaban-soal-halaman-239">Jawaban Soal Halaman 239</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#soal-1">Soal 1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#soal-2">Soal 2</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#soal-5">Soal 5</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#soal-6">Soal 6</a></li>
 </ul>
 </li>
 </ul>
@@ -652,6 +674,238 @@ x_1 = 1, \quad x_2 \approx -8.33 \times 10^{-17}, \quad x_3 \approx -2.78 \times
 \end{split}\]</div>
 </section>
 </section>
+<section class="tex2jax_ignore mathjax_ignore" id="ringkasan-materi-transformasi-linear-dan-matriks-standar">
+<h1>Ringkasan Materi: Transformasi Linear dan Matriks Standar<a class="headerlink" href="#ringkasan-materi-transformasi-linear-dan-matriks-standar" title="Link to this heading">#</a></h1>
+<p><strong>Math 1410 - Halaman 225–238</strong></p>
+<section id="transformasi-linear">
+<h2>1. Transformasi Linear<a class="headerlink" href="#transformasi-linear" title="Link to this heading">#</a></h2>
+<p><strong>Definisi:</strong><br />
+Sebuah fungsi <span class="math notranslate nohighlight">\(T: \mathbb{R}^n \rightarrow \mathbb{R}^m\)</span> disebut <strong>transformasi linear</strong> jika untuk semua vektor <span class="math notranslate nohighlight">\(\mathbf{u}, \mathbf{v} \in \mathbb{R}^n\)</span> dan semua skalar <span class="math notranslate nohighlight">\(c \in \mathbb{R}\)</span>, berlaku:</p>
+<div class="math notranslate nohighlight">
+\[
+T(\mathbf{u} + \mathbf{v}) = T(\mathbf{u}) + T(\mathbf{v}) \quad \text{(additivitas)}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+T(c\mathbf{u}) = cT(\mathbf{u}) \quad \text{(homogenitas)}
+\]</div>
+<p>Transformasi linear selalu memetakan titik nol ke titik nol:</p>
+<div class="math notranslate nohighlight">
+\[
+T(\mathbf{0}) = \mathbf{0}
+\]</div>
+</section>
+<section id="contoh-transformasi-linear">
+<h2>2. Contoh Transformasi Linear<a class="headerlink" href="#contoh-transformasi-linear" title="Link to this heading">#</a></h2>
+<p>Beberapa contoh transformasi linear di <span class="math notranslate nohighlight">\(\mathbb{R}^2\)</span> dan <span class="math notranslate nohighlight">\(\mathbb{R}^3\)</span>:</p>
+<ul class="simple">
+<li><p>Rotasi</p></li>
+<li><p>Refleksi</p></li>
+<li><p>Proyeksi</p></li>
+<li><p>Peregangan (scaling)</p></li>
+</ul>
+<p><strong>Contoh:</strong><br />
+Jika <span class="math notranslate nohighlight">\(T(x, y) = (2x + y, x - y)\)</span>, maka <span class="math notranslate nohighlight">\(T\)</span> adalah transformasi linear karena memenuhi kedua sifat di atas.</p>
+</section>
+<hr class="docutils" />
+<section id="transformasi-yang-bukan-linear">
+<h2>3. Transformasi yang Bukan Linear<a class="headerlink" href="#transformasi-yang-bukan-linear" title="Link to this heading">#</a></h2>
+<p>Contoh transformasi yang <strong>bukan</strong> linear:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(T(x, y) = (x + 1, y)\)</span> (karena ada konstanta)</p></li>
+<li><p><span class="math notranslate nohighlight">\(T(x, y) = (x^2, y)\)</span> (karena tidak linier dalam <span class="math notranslate nohighlight">\(x\)</span>)</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="matriks-standar-dari-transformasi-linear">
+<h2>4. Matriks Standar dari Transformasi Linear<a class="headerlink" href="#matriks-standar-dari-transformasi-linear" title="Link to this heading">#</a></h2>
+<p>Setiap transformasi linear <span class="math notranslate nohighlight">\(T: \mathbb{R}^n \rightarrow \mathbb{R}^m\)</span> dapat direpresentasikan dalam bentuk matriks:</p>
+<div class="math notranslate nohighlight">
+\[
+T(\mathbf{x}) = A\mathbf{x}
+\]</div>
+<p>Matriks <span class="math notranslate nohighlight">\(A\)</span> disebut <strong>matriks standar</strong> dari transformasi <span class="math notranslate nohighlight">\(T\)</span>.</p>
+<p><strong>Cara Menentukan Matriks Standar:</strong></p>
+<ol class="arabic simple">
+<li><p>Hitung <span class="math notranslate nohighlight">\(T(\mathbf{e}_1), T(\mathbf{e}_2), \dots, T(\mathbf{e}_n)\)</span></p></li>
+<li><p>Susun hasilnya sebagai kolom-kolom pada matriks <span class="math notranslate nohighlight">\(A\)</span></p></li>
+</ol>
+<p><strong>Contoh:</strong>
+Jika <span class="math notranslate nohighlight">\(T(x, y) = (2x + y, x - y)\)</span>, maka:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(T(1, 0) = (2, 1)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(T(0, 1) = (1, -1)\)</span></p></li>
+</ul>
+<p>Maka:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+A = \begin{pmatrix}
+2 &amp; 1 \\
+1 &amp; -1
+\end{pmatrix}
+\end{split}\]</div>
+</section>
+<section id="komposisi-transformasi-linear">
+<h2>5. Komposisi Transformasi Linear<a class="headerlink" href="#komposisi-transformasi-linear" title="Link to this heading">#</a></h2>
+<p>Jika <span class="math notranslate nohighlight">\(T_1\)</span> dan <span class="math notranslate nohighlight">\(T_2\)</span> adalah transformasi linear dengan matriks <span class="math notranslate nohighlight">\(A\)</span> dan <span class="math notranslate nohighlight">\(B\)</span>, maka komposisi <span class="math notranslate nohighlight">\(T = T_2 \circ T_1\)</span> juga linear, dengan matriks:</p>
+<div class="math notranslate nohighlight">
+\[
+T(\mathbf{x}) = B(A\mathbf{x}) = (BA)\mathbf{x}
+\]</div>
+</section>
+<section id="sifat-transformasi-linear">
+<h2>6. Sifat Transformasi Linear<a class="headerlink" href="#sifat-transformasi-linear" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(T(\mathbf{0}) = \mathbf{0}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(T\)</span> memetakan kombinasi linear menjadi kombinasi linear:
+$<span class="math notranslate nohighlight">\(
+T(c_1\mathbf{v}_1 + c_2\mathbf{v}_2 + \dots + c_k\mathbf{v}_k) = c_1T(\mathbf{v}_1) + c_2T(\mathbf{v}_2) + \dots + c_kT(\mathbf{v}_k)
+\)</span>$</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="geometri-transformasi-linear">
+<h2>7. Geometri Transformasi Linear<a class="headerlink" href="#geometri-transformasi-linear" title="Link to this heading">#</a></h2>
+<p>Transformasi linear di <span class="math notranslate nohighlight">\(\mathbb{R}^2\)</span> dapat:</p>
+<ul class="simple">
+<li><p>Merefleksikan terhadap garis</p></li>
+<li><p>Memutar vektor</p></li>
+<li><p>Memperbesar atau mengecilkan bentuk</p></li>
+<li><p>Memproyeksikan ke garis atau bidang</p></li>
+</ul>
+<p><strong>Contoh Geometris:</strong></p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(T(x, y) = (y, x)\)</span> ⟹ refleksi terhadap garis <span class="math notranslate nohighlight">\(y = x\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(T(x, y) = (-y, x)\)</span> ⟹ rotasi 90° CCW</p></li>
+<li><p><span class="math notranslate nohighlight">\(T(x, y) = (x, 0)\)</span> ⟹ proyeksi ke sumbu-<span class="math notranslate nohighlight">\(x\)</span></p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="id1">
+<h2>8. Kesimpulan<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<p>Transformasi linear memungkinkan kita:</p>
+<ul class="simple">
+<li><p>Merepresentasikan perubahan vektor sebagai perkalian matriks</p></li>
+<li><p>Menganalisis sistem linear dengan cara yang efisien</p></li>
+<li><p>Memahami struktur aljabar dari ruang vektor</p></li>
+</ul>
+<p>Transformasi ini merupakan dasar penting dalam geometri, fisika, komputer grafis, machine learning, dan banyak bidang lainnya.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="jawaban-soal-halaman-239">
+<h1>Jawaban Soal Halaman 239<a class="headerlink" href="#jawaban-soal-halaman-239" title="Link to this heading">#</a></h1>
+<section id="soal-1">
+<h2>Soal 1<a class="headerlink" href="#soal-1" title="Link to this heading">#</a></h2>
+<p>Tentukan apakah transformasi berikut adalah linear. Jika ya, tentukan matriks standarnya.</p>
+<p><strong>(a)</strong> <span class="math notranslate nohighlight">\(T(x, y) = (x + 2y,\ x - y)\)</span></p>
+<p><strong>Jawaban:</strong></p>
+<p>Transformasi ini hanya melibatkan penjumlahan dan pengurangan skalar dari <span class="math notranslate nohighlight">\(x\)</span> dan <span class="math notranslate nohighlight">\(y\)</span>, tanpa konstanta bebas.</p>
+<p>Transformasi ini memenuhi:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(T(\mathbf{u} + \mathbf{v}) = T(\mathbf{u}) + T(\mathbf{v})\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(T(c\mathbf{u}) = cT(\mathbf{u})\)</span></p></li>
+</ul>
+<p>Maka <span class="math notranslate nohighlight">\(T\)</span> adalah transformasi linear.</p>
+<p>Citra dari basis standar:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(T(1, 0) = (1, 1)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(T(0, 1) = (2, -1)\)</span></p></li>
+</ul>
+<p>Matriks standar <span class="math notranslate nohighlight">\(A\)</span> adalah:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+A = \begin{pmatrix}
+1 &amp; 2 \\
+1 &amp; -1
+\end{pmatrix}
+\end{split}\]</div>
+</section>
+<section id="soal-2">
+<h2>Soal 2<a class="headerlink" href="#soal-2" title="Link to this heading">#</a></h2>
+<p>Tentukan apakah transformasi berikut adalah linear. Jika tidak, tunjukkan alasannya.</p>
+<p><strong>(b)</strong> <span class="math notranslate nohighlight">\(T(x, y) = (x + 1,\ y)\)</span></p>
+<p><strong>Jawaban:</strong></p>
+<p>Hitung <span class="math notranslate nohighlight">\(T(0, 0)\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+T(0, 0) = (1, 0) \neq (0, 0)
+\]</div>
+<p>Transformasi ini tidak memetakan <span class="math notranslate nohighlight">\(\mathbf{0}\)</span> ke <span class="math notranslate nohighlight">\(\mathbf{0}\)</span>, sehingga tidak memenuhi syarat transformasi linear.</p>
+<p>Selain itu, penambahan konstanta <span class="math notranslate nohighlight">\(+1\)</span> pada komponen <span class="math notranslate nohighlight">\(x\)</span> melanggar homogenitas.</p>
+<p>Maka <span class="math notranslate nohighlight">\(T\)</span> bukan transformasi linear.</p>
+</section>
+<hr class="docutils" />
+<section id="soal-5">
+<h2>Soal 5<a class="headerlink" href="#soal-5" title="Link to this heading">#</a></h2>
+<p>Diketahui <span class="math notranslate nohighlight">\(T: \mathbb{R}^3 \rightarrow \mathbb{R}^2\)</span> dengan:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(T(1, 0, 0) = (2, -1)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(T(0, 1, 0) = (0, 3)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(T(0, 0, 1) = (1, 2)\)</span></p></li>
+</ul>
+<p>Tentukan matriks standar <span class="math notranslate nohighlight">\(A\)</span> dan nilai <span class="math notranslate nohighlight">\(T(2, -1, 3)\)</span>.</p>
+<p><strong>Jawaban:</strong></p>
+<p>Susun kolom dari matriks standar <span class="math notranslate nohighlight">\(A\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+A = \begin{pmatrix}
+2 &amp; 0 &amp; 1 \\
+-1 &amp; 3 &amp; 2
+\end{pmatrix}
+\end{split}\]</div>
+<p>Hitung:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+T(2, -1, 3) = A \cdot \begin{pmatrix} 2 \\ -1 \\ 3 \end{pmatrix}
+= \begin{pmatrix}
+2(2) + 0(-1) + 1(3) \\
+-1(2) + 3(-1) + 2(3)
+\end{pmatrix}
+= \begin{pmatrix}
+4 + 0 + 3 \\
+-2 - 3 + 6
+\end{pmatrix}
+= \begin{pmatrix}
+7 \\
+1
+\end{pmatrix}
+\end{split}\]</div>
+<p>Jadi, <span class="math notranslate nohighlight">\(T(2, -1, 3) = (7, 1)\)</span></p>
+</section>
+<section id="soal-6">
+<h2>Soal 6<a class="headerlink" href="#soal-6" title="Link to this heading">#</a></h2>
+<p>Diketahui dua transformasi linear dengan matriks standar:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+A = \begin{pmatrix} 1 &amp; 2 \\ 3 &amp; 4 \end{pmatrix}, \quad B = \begin{pmatrix} 0 &amp; -1 \\ 1 &amp; 0 \end{pmatrix}
+\end{split}\]</div>
+<p>Tentukan matriks dari <span class="math notranslate nohighlight">\(T = T_2 \circ T_1\)</span></p>
+<p><strong>Jawaban:</strong></p>
+<p>Komposisi transformasi <span class="math notranslate nohighlight">\(T = T_2 \circ T_1\)</span> diwakili oleh matriks hasil kali <span class="math notranslate nohighlight">\(BA\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+BA = \begin{pmatrix} 0 &amp; -1 \\ 1 &amp; 0 \end{pmatrix}
+\begin{pmatrix} 1 &amp; 2 \\ 3 &amp; 4 \end{pmatrix}
+= \begin{pmatrix}
+0(1) + (-1)(3) &amp; 0(2) + (-1)(4) \\
+1(1) + 0(3) &amp; 1(2) + 0(4)
+\end{pmatrix}
+= \begin{pmatrix}
+-3 &amp; -4 \\
+1 &amp; 2
+\end{pmatrix}
+\end{split}\]</div>
+<p>Maka, matriks dari <span class="math notranslate nohighlight">\(T = T_2 \circ T_1\)</span> adalah:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{pmatrix}
+-3 &amp; -4 \\
+1 &amp; 2
+\end{pmatrix}
+\end{split}\]</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -721,6 +975,24 @@ x_1 = 1, \quad x_2 \approx -8.33 \times 10^{-17}, \quad x_3 \approx -2.78 \times
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#penyelesaian-dengan-metode-invers-matriks"><em>Penyelesaian Dengan Metode Invers Matriks</em></a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mencari-invers-matriks-a"><em>1. Mencari Invers Matriks <span class="math notranslate nohighlight">\(( A )\)</span></em></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kesimpulan"><em>Kesimpulan</em></a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#ringkasan-materi-transformasi-linear-dan-matriks-standar">Ringkasan Materi: Transformasi Linear dan Matriks Standar</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transformasi-linear">1. Transformasi Linear</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-transformasi-linear">2. Contoh Transformasi Linear</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transformasi-yang-bukan-linear">3. Transformasi yang Bukan Linear</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matriks-standar-dari-transformasi-linear">4. Matriks Standar dari Transformasi Linear</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#komposisi-transformasi-linear">5. Komposisi Transformasi Linear</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sifat-transformasi-linear">6. Sifat Transformasi Linear</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#geometri-transformasi-linear">7. Geometri Transformasi Linear</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">8. Kesimpulan</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#jawaban-soal-halaman-239">Jawaban Soal Halaman 239</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#soal-1">Soal 1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#soal-2">Soal 2</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#soal-5">Soal 5</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#soal-6">Soal 6</a></li>
 </ul>
 </li>
 </ul>

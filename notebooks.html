@@ -185,11 +185,25 @@
 <li class="toctree-l1"><a class="reference internal" href="markdown.html">Sistem Persamaan Linear</a></li>
 
 
+
 <li class="toctree-l1 current active"><a class="current reference internal" href="#"><em>Sistem Persamaan Linier</em></a></li>
 
 
 
+
+
+
+
+
+
+
+
+
+
+
 <li class="toctree-l1"><a class="reference internal" href="markdown-notebooks.html">Invers Matriks</a></li>
+
+
 
 
 </ul>
@@ -341,27 +355,43 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#"><em>Sistem Persamaan Linier</em></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#solusi-tunggal">1.Solusi Tunggal</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#banyak-solusi">2.Banyak Solusi</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#tanpa-solusi">3.Tanpa Solusi</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#penyelesaian-dengan-metode-invers-matriks"><em>Penyelesaian Dengan Metode Invers Matriks</em></a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mencari-invers-matriks-a"><em>1. Mencari Invers Matriks <span class="math notranslate nohighlight">\(( A )\)</span></em></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kesimpulan"><em>Kesimpulan</em></a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#ringkasan-materi-transformasi-linear-dan-matriks-standar">Ringkasan Materi: Transformasi Linear dan Matriks Standar</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transformasi-linear">1. Transformasi Linear</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-transformasi-linear">2. Contoh Transformasi Linear</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transformasi-yang-bukan-linear">3. Transformasi yang Bukan Linear</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matriks-standar-dari-transformasi-linear">4. Matriks Standar dari Transformasi Linear</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#komposisi-transformasi-linear">5. Komposisi Transformasi Linear</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sifat-transformasi-linear">6. Sifat Transformasi Linear</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#geometri-transformasi-linear">7. Geometri Transformasi Linear</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">8. Kesimpulan</a></li>
-</ul>
-</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#ringkasan-materi-transformasi-linear-dan-matriks-standar">Ringkasan Materi: Transformasi Linear dan Matriks Standar</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#transformasi-linear">1. Transformasi Linear</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-transformasi-linear">2. Contoh Transformasi Linear</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#transformasi-yang-bukan-linear">3. Transformasi yang Bukan Linear</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#matriks-standar-dari-transformasi-linear">4. Matriks Standar dari Transformasi Linear</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#komposisi-transformasi-linear">5. Komposisi Transformasi Linear</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#sifat-transformasi-linear">6. Sifat Transformasi Linear</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#geometri-transformasi-linear">7. Geometri Transformasi Linear</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">8. Kesimpulan</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#jawaban-soal-halaman-239">Jawaban Soal Halaman 239</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#soal-1">Soal 1</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#soal-2">Soal 2</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#soal-5">Soal 5</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#soal-6">Soal 6</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pengertian-transformasi-linier">Pengertian Transformasi Linier</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pembuktian-transformasi-linier">Pembuktian Transformasi Linier</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#penjumlahan">1. Penjumlahan</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#perkalian-skalar">2. Perkalian Skalar</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Kesimpulan</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-refleksi-transformasi-matriks">Contoh Refleksi Transformasi Matriks</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reflection-about-the-x-axis">1. Reflection about the x-axis</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reflection-about-the-y-axis">2. Reflection about the y-axis</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reflection-about-the-line-y-x">3. Reflection about the line ( y = x )</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">4. Reflection about the line ( y = -x )</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reflection-about-the-origin">5. Reflection about the origin</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -577,30 +607,39 @@ Sistem ini <strong>tidak memiliki solusi</strong>.</p>
 </table>
 </div>
 <p>Metode eliminasi Gauss memudahkan kita dalam mengidentifikasi jenis solusi berdasarkan bentuk matriks setelah eliminasi.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mf">1.</span><span class="n">Solusi</span> <span class="n">Tunggal</span>
-<span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">www</span><span class="o">.</span><span class="n">geogebra</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">calculator</span><span class="o">/</span><span class="n">deekkbx3</span>
-
-
-<span class="mf">2.</span><span class="n">Banyak</span> <span class="n">Solusi</span>
-<span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">www</span><span class="o">.</span><span class="n">geogebra</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">calculator</span><span class="o">/</span><span class="n">dnxnd3nh</span>
-
-
-<span class="mf">3.</span><span class="n">Tanpa</span> <span class="n">Solusi</span>
-<span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">www</span><span class="o">.</span><span class="n">geogebra</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">calculator</span><span class="o">/</span><span class="n">rgjww8f</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="g g-Whitespace">    </span><span class="mi">1</span><span class="o">.</span><span class="n">Solusi</span> <span class="n">Tunggal</span>
-     <span class="o">^</span>
-<span class="ne">SyntaxError</span>: invalid decimal literal
-</pre></div>
-</div>
-</div>
-</div>
+</section>
+<section id="solusi-tunggal">
+<h1>1.Solusi Tunggal<a class="headerlink" href="#solusi-tunggal" title="Link to this heading">#</a></h1>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{cases}
+2x + y = 4 \\
+x + y = 3
+\end{cases}
+\end{split}\]</div>
+<p>Link: <a class="reference external" href="https://www.geogebra.org/calculator/deekkbx3">Solusi Tunggal</a></p>
+</section>
+<section id="banyak-solusi">
+<h1>2.Banyak Solusi<a class="headerlink" href="#banyak-solusi" title="Link to this heading">#</a></h1>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{cases}
+x + y = 3 \\
+2x + 2y = 6
+\end{cases}
+\end{split}\]</div>
+<p>Link: <a class="reference external" href="https://www.geogebra.org/calculator/dnxnd3nh">Banyak Solusi</a></p>
+</section>
+<section id="tanpa-solusi">
+<h1>3.Tanpa Solusi<a class="headerlink" href="#tanpa-solusi" title="Link to this heading">#</a></h1>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{cases}
+x + y = 3 \\
+x + y = 5
+\end{cases}
+\end{split}\]</div>
+<p>Link: <a class="reference external" href="https://www.geogebra.org/calculator/rgjww8f">Tanpa Solusi</a></p>
 </section>
 <section id="penyelesaian-dengan-metode-invers-matriks">
 <h1><em>Penyelesaian Dengan Metode Invers Matriks</em><a class="headerlink" href="#penyelesaian-dengan-metode-invers-matriks" title="Link to this heading">#</a></h1>
@@ -676,11 +715,12 @@ x_1 = 1, \quad x_2 \approx -8.33 \times 10^{-17}, \quad x_3 \approx -2.78 \times
 \end{split}\]</div>
 </section>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="ringkasan-materi-transformasi-linear-dan-matriks-standar">
+<section id="ringkasan-materi-transformasi-linear-dan-matriks-standar">
 <h1>Ringkasan Materi: Transformasi Linear dan Matriks Standar<a class="headerlink" href="#ringkasan-materi-transformasi-linear-dan-matriks-standar" title="Link to this heading">#</a></h1>
 <p><strong>Math 1410 - Halaman 225–238</strong></p>
+</section>
 <section id="transformasi-linear">
-<h2>1. Transformasi Linear<a class="headerlink" href="#transformasi-linear" title="Link to this heading">#</a></h2>
+<h1>1. Transformasi Linear<a class="headerlink" href="#transformasi-linear" title="Link to this heading">#</a></h1>
 <p><strong>Definisi:</strong><br />
 Sebuah fungsi <span class="math notranslate nohighlight">\(T: \mathbb{R}^n \rightarrow \mathbb{R}^m\)</span> disebut <strong>transformasi linear</strong> jika untuk semua vektor <span class="math notranslate nohighlight">\(\mathbf{u}, \mathbf{v} \in \mathbb{R}^n\)</span> dan semua skalar <span class="math notranslate nohighlight">\(c \in \mathbb{R}\)</span>, berlaku:</p>
 <div class="math notranslate nohighlight">
@@ -698,7 +738,7 @@ T(\mathbf{0}) = \mathbf{0}
 \]</div>
 </section>
 <section id="contoh-transformasi-linear">
-<h2>2. Contoh Transformasi Linear<a class="headerlink" href="#contoh-transformasi-linear" title="Link to this heading">#</a></h2>
+<h1>2. Contoh Transformasi Linear<a class="headerlink" href="#contoh-transformasi-linear" title="Link to this heading">#</a></h1>
 <p>Beberapa contoh transformasi linear di <span class="math notranslate nohighlight">\(\mathbb{R}^2\)</span> dan <span class="math notranslate nohighlight">\(\mathbb{R}^3\)</span>:</p>
 <ul class="simple">
 <li><p>Rotasi</p></li>
@@ -708,19 +748,19 @@ T(\mathbf{0}) = \mathbf{0}
 </ul>
 <p><strong>Contoh:</strong><br />
 Jika <span class="math notranslate nohighlight">\(T(x, y) = (2x + y, x - y)\)</span>, maka <span class="math notranslate nohighlight">\(T\)</span> adalah transformasi linear karena memenuhi kedua sifat di atas.</p>
-</section>
 <hr class="docutils" />
+</section>
 <section id="transformasi-yang-bukan-linear">
-<h2>3. Transformasi yang Bukan Linear<a class="headerlink" href="#transformasi-yang-bukan-linear" title="Link to this heading">#</a></h2>
+<h1>3. Transformasi yang Bukan Linear<a class="headerlink" href="#transformasi-yang-bukan-linear" title="Link to this heading">#</a></h1>
 <p>Contoh transformasi yang <strong>bukan</strong> linear:</p>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(T(x, y) = (x + 1, y)\)</span> (karena ada konstanta)</p></li>
 <li><p><span class="math notranslate nohighlight">\(T(x, y) = (x^2, y)\)</span> (karena tidak linier dalam <span class="math notranslate nohighlight">\(x\)</span>)</p></li>
 </ul>
-</section>
 <hr class="docutils" />
+</section>
 <section id="matriks-standar-dari-transformasi-linear">
-<h2>4. Matriks Standar dari Transformasi Linear<a class="headerlink" href="#matriks-standar-dari-transformasi-linear" title="Link to this heading">#</a></h2>
+<h1>4. Matriks Standar dari Transformasi Linear<a class="headerlink" href="#matriks-standar-dari-transformasi-linear" title="Link to this heading">#</a></h1>
 <p>Setiap transformasi linear <span class="math notranslate nohighlight">\(T: \mathbb{R}^n \rightarrow \mathbb{R}^m\)</span> dapat direpresentasikan dalam bentuk matriks:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -748,7 +788,7 @@ A = \begin{pmatrix}
 \end{split}\]</div>
 </section>
 <section id="komposisi-transformasi-linear">
-<h2>5. Komposisi Transformasi Linear<a class="headerlink" href="#komposisi-transformasi-linear" title="Link to this heading">#</a></h2>
+<h1>5. Komposisi Transformasi Linear<a class="headerlink" href="#komposisi-transformasi-linear" title="Link to this heading">#</a></h1>
 <p>Jika <span class="math notranslate nohighlight">\(T_1\)</span> dan <span class="math notranslate nohighlight">\(T_2\)</span> adalah transformasi linear dengan matriks <span class="math notranslate nohighlight">\(A\)</span> dan <span class="math notranslate nohighlight">\(B\)</span>, maka komposisi <span class="math notranslate nohighlight">\(T = T_2 \circ T_1\)</span> juga linear, dengan matriks:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -756,7 +796,7 @@ T(\mathbf{x}) = B(A\mathbf{x}) = (BA)\mathbf{x}
 \]</div>
 </section>
 <section id="sifat-transformasi-linear">
-<h2>6. Sifat Transformasi Linear<a class="headerlink" href="#sifat-transformasi-linear" title="Link to this heading">#</a></h2>
+<h1>6. Sifat Transformasi Linear<a class="headerlink" href="#sifat-transformasi-linear" title="Link to this heading">#</a></h1>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(T(\mathbf{0}) = \mathbf{0}\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(T\)</span> memetakan kombinasi linear menjadi kombinasi linear:
@@ -764,10 +804,10 @@ $<span class="math notranslate nohighlight">\(
 T(c_1\mathbf{v}_1 + c_2\mathbf{v}_2 + \dots + c_k\mathbf{v}_k) = c_1T(\mathbf{v}_1) + c_2T(\mathbf{v}_2) + \dots + c_kT(\mathbf{v}_k)
 \)</span>$</p></li>
 </ul>
-</section>
 <hr class="docutils" />
+</section>
 <section id="geometri-transformasi-linear">
-<h2>7. Geometri Transformasi Linear<a class="headerlink" href="#geometri-transformasi-linear" title="Link to this heading">#</a></h2>
+<h1>7. Geometri Transformasi Linear<a class="headerlink" href="#geometri-transformasi-linear" title="Link to this heading">#</a></h1>
 <p>Transformasi linear di <span class="math notranslate nohighlight">\(\mathbb{R}^2\)</span> dapat:</p>
 <ul class="simple">
 <li><p>Merefleksikan terhadap garis</p></li>
@@ -781,10 +821,10 @@ T(c_1\mathbf{v}_1 + c_2\mathbf{v}_2 + \dots + c_k\mathbf{v}_k) = c_1T(\mathbf{v}
 <li><p><span class="math notranslate nohighlight">\(T(x, y) = (-y, x)\)</span> ⟹ rotasi 90° CCW</p></li>
 <li><p><span class="math notranslate nohighlight">\(T(x, y) = (x, 0)\)</span> ⟹ proyeksi ke sumbu-<span class="math notranslate nohighlight">\(x\)</span></p></li>
 </ul>
-</section>
 <hr class="docutils" />
+</section>
 <section id="id1">
-<h2>8. Kesimpulan<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<h1>8. Kesimpulan<a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
 <p>Transformasi linear memungkinkan kita:</p>
 <ul class="simple">
 <li><p>Merepresentasikan perubahan vektor sebagai perkalian matriks</p></li>
@@ -792,7 +832,6 @@ T(c_1\mathbf{v}_1 + c_2\mathbf{v}_2 + \dots + c_k\mathbf{v}_k) = c_1T(\mathbf{v}
 <li><p>Memahami struktur aljabar dari ruang vektor</p></li>
 </ul>
 <p>Transformasi ini merupakan dasar penting dalam geometri, fisika, komputer grafis, machine learning, dan banyak bidang lainnya.</p>
-</section>
 </section>
 <hr class="docutils" />
 <section class="tex2jax_ignore mathjax_ignore" id="jawaban-soal-halaman-239">
@@ -907,6 +946,153 @@ BA = \begin{pmatrix} 0 &amp; -1 \\ 1 &amp; 0 \end{pmatrix}
 \end{pmatrix}
 \end{split}\]</div>
 </section>
+<section id="pengertian-transformasi-linier">
+<h2>Pengertian Transformasi Linier<a class="headerlink" href="#pengertian-transformasi-linier" title="Link to this heading">#</a></h2>
+<p>Transformasi linear merupakan fungsi yang memetakan vektor dari satu ruang vektor ke ruang vektor lain dimana memenuhi sifat-sifat tertentu seperti linearitas. Sifat-sifat transformasi linear meliputi kernel yang merupakan himpunan vektor yang dipetakan ke nilai nol, serta jangkauan yang merupakan himpunan bayangan vektor hasil transformasi. Teorema-teorema penting terkait transformasi linear antara lain mengenai dimensi kernel dll.</p>
+<p>Transformasi linier adalah suatu fungsi:</p>
+<div class="math notranslate nohighlight">
+\[
+T: \mathbb{R}^n \to \mathbb{R}^m
+\]</div>
+<p>yang memenuhi dua sifat utama untuk setiap vektor <span class="math notranslate nohighlight">\(( \mathbf{u}, \mathbf{v} \in \mathbb{R}^n )\)</span> dan skalar <span class="math notranslate nohighlight">\(( c \in \mathbb{R} )\)</span>:</p>
+<ol class="arabic">
+<li><p><strong>Aditif</strong>:</p>
+<div class="math notranslate nohighlight">
+\[
+   T(\mathbf{u} + \mathbf{v}) = T(\mathbf{u}) + T(\mathbf{v})
+   \]</div>
+</li>
+<li><p><strong>Homogen</strong>:</p>
+<div class="math notranslate nohighlight">
+\[
+   T(c\mathbf{u}) = cT(\mathbf{u})
+   \]</div>
+</li>
+</ol>
+<p>Jika sebuah transformasi memenuhi kedua sifat tersebut, maka transformasi tersebut disebut <strong>transformasi linier</strong>. Transformasi ini mempertahankan operasi penjumlahan dan perkalian skalar dari ruang vektor.</p>
+</section>
+<section id="pembuktian-transformasi-linier">
+<h2>Pembuktian Transformasi Linier<a class="headerlink" href="#pembuktian-transformasi-linier" title="Link to this heading">#</a></h2>
+<p>Diberikan transformasi <span class="math notranslate nohighlight">\(( T: \mathbb{R}^2 \to \mathbb{R}^2 )\)</span> didefinisikan oleh:</p>
+<div class="math notranslate nohighlight">
+\[
+T(v_1, v_2) = (v_1 + v_2, v_1)
+\]</div>
+<p>Transformasi <span class="math notranslate nohighlight">\(( T )\)</span> dikatakan linier jika:</p>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(( T(\mathbf{u} + \mathbf{v}) = T(\mathbf{u}) + T(\mathbf{v}) )\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(( T(c\mathbf{u}) = cT(\mathbf{u}) )\)</span></p></li>
+</ol>
+<p>Misalkan <span class="math notranslate nohighlight">\(( \mathbf{u} = (u_1, u_2) )\)</span>, <span class="math notranslate nohighlight">\(( \mathbf{v} = (v_1, v_2) )\)</span>, dan <span class="math notranslate nohighlight">\(( c \in \mathbb{R} )\)</span>.</p>
+<section id="penjumlahan">
+<h3>1. Penjumlahan<a class="headerlink" href="#penjumlahan" title="Link to this heading">#</a></h3>
+<p>Langkah pertama:</p>
+<div class="math notranslate nohighlight">
+\[
+T(\mathbf{u} + \mathbf{v}) = T((u_1 + v_1, u_2 + v_2)) = (u_1 + u_2 + v_1 + v_2, u_1 + v_1)
+\]</div>
+<p>Langkah kedua:</p>
+<div class="math notranslate nohighlight">
+\[
+T(\mathbf{u}) + T(\mathbf{v}) = (u_1 + u_2, u_1) + (v_1 + v_2, v_1) = (u_1 + u_2 + v_1 + v_2, u_1 + v_1)
+\]</div>
+<p>Jadi, <span class="math notranslate nohighlight">\(( T(\mathbf{u} + \mathbf{v}) = T(\mathbf{u}) + T(\mathbf{v}) )\)</span></p>
+</section>
+<section id="perkalian-skalar">
+<h3>2. Perkalian Skalar<a class="headerlink" href="#perkalian-skalar" title="Link to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[
+T(c\mathbf{u}) = T((cu_1, cu_2)) = (cu_1 + cu_2, cu_1) = c(u_1 + u_2, u_1) = cT(\mathbf{u})
+\]</div>
+</section>
+<section id="id2">
+<h3>Kesimpulan<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<p>Karena <span class="math notranslate nohighlight">\(( T )\)</span> memenuhi kedua sifat transformasi linier, maka <span class="math notranslate nohighlight">\(( T )\)</span> adalah transformasi linier.</p>
+</section>
+</section>
+<section id="contoh-refleksi-transformasi-matriks">
+<h2>Contoh Refleksi Transformasi Matriks<a class="headerlink" href="#contoh-refleksi-transformasi-matriks" title="Link to this heading">#</a></h2>
+<p>Berikut adalah contoh 2 titik untuk masing-masing jenis refleksi transformasi:</p>
+<section id="reflection-about-the-x-axis">
+<h3>1. Reflection about the x-axis<a class="headerlink" href="#reflection-about-the-x-axis" title="Link to this heading">#</a></h3>
+<p>Matriks refleksi:
+$<span class="math notranslate nohighlight">\(
+\begin{bmatrix}
+1 &amp; 0 \\
+0 &amp; -1
+\end{bmatrix}
+\)</span>$</p>
+<p>Contoh:
+$<span class="math notranslate nohighlight">\(
+(2, 3) \rightarrow (2, -3) \\
+(-1, 4) \rightarrow (-1, -4)
+\)</span>$</p>
+</section>
+<hr class="docutils" />
+<section id="reflection-about-the-y-axis">
+<h3>2. Reflection about the y-axis<a class="headerlink" href="#reflection-about-the-y-axis" title="Link to this heading">#</a></h3>
+<p>Matriks refleksi:
+$<span class="math notranslate nohighlight">\(
+\begin{bmatrix}
+-1 &amp; 0 \\
+0 &amp; 1
+\end{bmatrix}
+\)</span>$</p>
+<p>Contoh:
+$<span class="math notranslate nohighlight">\(
+(2, 3) \rightarrow (-2, 3) \\
+(-4, 1) \rightarrow (4, 1)
+\)</span>$</p>
+</section>
+<hr class="docutils" />
+<section id="reflection-about-the-line-y-x">
+<h3>3. Reflection about the line ( y = x )<a class="headerlink" href="#reflection-about-the-line-y-x" title="Link to this heading">#</a></h3>
+<p>Matriks refleksi:
+$<span class="math notranslate nohighlight">\(
+\begin{bmatrix}
+0 &amp; 1 \\
+1 &amp; 0
+\end{bmatrix}
+\)</span>$</p>
+<p>Contoh:
+$<span class="math notranslate nohighlight">\(
+(2, 5) \rightarrow (5, 2) \\
+(0, -3) \rightarrow (-3, 0)
+\)</span>$</p>
+</section>
+<hr class="docutils" />
+<section id="id3">
+<h3>4. Reflection about the line ( y = -x )<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
+<p>Matriks refleksi:
+$<span class="math notranslate nohighlight">\(
+\begin{bmatrix}
+0 &amp; -1 \\
+-1 &amp; 0
+\end{bmatrix}
+\)</span>$</p>
+<p>Contoh:
+$<span class="math notranslate nohighlight">\(
+(3, 1) \rightarrow (-1, -3) \\
+(-2, 4) \rightarrow (-4, 2)
+\)</span>$</p>
+</section>
+<hr class="docutils" />
+<section id="reflection-about-the-origin">
+<h3>5. Reflection about the origin<a class="headerlink" href="#reflection-about-the-origin" title="Link to this heading">#</a></h3>
+<p>Matriks refleksi:
+$<span class="math notranslate nohighlight">\(
+\begin{bmatrix}
+-1 &amp; 0 \\
+0 &amp; -1
+\end{bmatrix}
+\)</span>$</p>
+<p>Contoh:
+$<span class="math notranslate nohighlight">\(
+(3, -2) \rightarrow (-3, 2) \\
+(-1, -1) \rightarrow (1, 1)
+\)</span>$</p>
+</section>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -974,27 +1160,43 @@ BA = \begin{pmatrix} 0 &amp; -1 \\ 1 &amp; 0 \end{pmatrix}
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#"><em>Sistem Persamaan Linier</em></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#solusi-tunggal">1.Solusi Tunggal</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#banyak-solusi">2.Banyak Solusi</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#tanpa-solusi">3.Tanpa Solusi</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#penyelesaian-dengan-metode-invers-matriks"><em>Penyelesaian Dengan Metode Invers Matriks</em></a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mencari-invers-matriks-a"><em>1. Mencari Invers Matriks <span class="math notranslate nohighlight">\(( A )\)</span></em></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kesimpulan"><em>Kesimpulan</em></a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#ringkasan-materi-transformasi-linear-dan-matriks-standar">Ringkasan Materi: Transformasi Linear dan Matriks Standar</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transformasi-linear">1. Transformasi Linear</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-transformasi-linear">2. Contoh Transformasi Linear</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transformasi-yang-bukan-linear">3. Transformasi yang Bukan Linear</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matriks-standar-dari-transformasi-linear">4. Matriks Standar dari Transformasi Linear</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#komposisi-transformasi-linear">5. Komposisi Transformasi Linear</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sifat-transformasi-linear">6. Sifat Transformasi Linear</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#geometri-transformasi-linear">7. Geometri Transformasi Linear</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">8. Kesimpulan</a></li>
-</ul>
-</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#ringkasan-materi-transformasi-linear-dan-matriks-standar">Ringkasan Materi: Transformasi Linear dan Matriks Standar</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#transformasi-linear">1. Transformasi Linear</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-transformasi-linear">2. Contoh Transformasi Linear</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#transformasi-yang-bukan-linear">3. Transformasi yang Bukan Linear</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#matriks-standar-dari-transformasi-linear">4. Matriks Standar dari Transformasi Linear</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#komposisi-transformasi-linear">5. Komposisi Transformasi Linear</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#sifat-transformasi-linear">6. Sifat Transformasi Linear</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#geometri-transformasi-linear">7. Geometri Transformasi Linear</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">8. Kesimpulan</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#jawaban-soal-halaman-239">Jawaban Soal Halaman 239</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#soal-1">Soal 1</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#soal-2">Soal 2</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#soal-5">Soal 5</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#soal-6">Soal 6</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pengertian-transformasi-linier">Pengertian Transformasi Linier</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pembuktian-transformasi-linier">Pembuktian Transformasi Linier</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#penjumlahan">1. Penjumlahan</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#perkalian-skalar">2. Perkalian Skalar</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Kesimpulan</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-refleksi-transformasi-matriks">Contoh Refleksi Transformasi Matriks</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reflection-about-the-x-axis">1. Reflection about the x-axis</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reflection-about-the-y-axis">2. Reflection about the y-axis</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reflection-about-the-line-y-x">3. Reflection about the line ( y = x )</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">4. Reflection about the line ( y = -x )</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reflection-about-the-origin">5. Reflection about the origin</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>

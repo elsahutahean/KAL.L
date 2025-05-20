@@ -1,0 +1,921 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Defenisi Eigenvalue Eigenvector &#8212; My Jupyter Book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'eigenvalue';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/elsa.jpg" class="logo__image only-light" alt="My Jupyter Book - Home"/>
+    <script>document.write(`<img src="_static/elsa.jpg" class="logo__image only-dark" alt="My Jupyter Book - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Welcome to Komputasi Aljabar Linear
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="notebooks.html"><em>Sistem Persamaan Linier</em></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="markdown-notebooks.html">Invers Matriks</a></li>
+
+
+
+
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/eigenvalue.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Defenisi Eigenvalue Eigenvector</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apakah-ortogonal">1. Apakah <strong>ortogonal</strong>?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apakah-ortonormal">2. Apakah <strong>ortonormal</strong>?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kesimpulan">Kesimpulan:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mencari-eigenvalue-dan-eigenvector">Mencari Eigenvalue dan Eigenvector</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#definisi-ortogonal-dan-ortonormal">Definisi Ortogonal dan Ortonormal</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ortogonal">Ortogonal</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ortonormal">Ortonormal</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-pada-eigenvector">Contoh pada eigenvector</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#normalisasi-vektor">Normalisasi vektor</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#apakah-hat-v-1-dan-hat-v-2-ortogonal">Apakah <span class="math notranslate nohighlight">\(\hat{v}_1\)</span> dan <span class="math notranslate nohighlight">\(\hat{v}_2\)</span> ortogonal?</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Kesimpulan</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="defenisi-eigenvalue-eigenvector">
+<h1>Defenisi Eigenvalue Eigenvector<a class="headerlink" href="#defenisi-eigenvalue-eigenvector" title="Link to this heading">#</a></h1>
+<hr class="docutils" />
+<p><strong>Eigenvector</strong> (vektor eigen) dari suatu matriks kuadrat <span class="math notranslate nohighlight">\(A\)</span> adalah vektor tak nol <span class="math notranslate nohighlight">\(\mathbf{v}\)</span> sedemikian sehingga:</p>
+<div class="math notranslate nohighlight">
+\[
+A\mathbf{v} = \lambda \mathbf{v}
+\]</div>
+<p>di mana <span class="math notranslate nohighlight">\(\lambda\)</span> adalah sebuah skalar yang disebut <strong>eigenvalue</strong> (nilai eigen) yang bersesuaian dengan vektor <span class="math notranslate nohighlight">\(\mathbf{v}\)</span>.</p>
+<p>Intuisi</p>
+<ul class="simple">
+<li><p>Matriks <span class="math notranslate nohighlight">\(A\)</span> mentransformasikan vektor <span class="math notranslate nohighlight">\(\mathbf{v}\)</span>.</p></li>
+<li><p>Jika hasil transformasi hanya mengubah panjang atau membalik arah dari <span class="math notranslate nohighlight">\(\mathbf{v}\)</span> (tetap berada pada garis yang sama), maka <span class="math notranslate nohighlight">\(\mathbf{v}\)</span> adalah <strong>eigenvector</strong> dan <span class="math notranslate nohighlight">\(\lambda\)</span> adalah <strong>eigenvalue</strong>.</p></li>
+</ul>
+<p>Contoh</p>
+<p>Misalkan kita punya matriks:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+A = \begin{bmatrix} 2 &amp; 1 \\ 1 &amp; 2 \end{bmatrix}, \quad \mathbf{v} = \begin{bmatrix} 1 \\ 1 \end{bmatrix}
+\end{split}\]</div>
+<p>Hitung:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+A\mathbf{v} = \begin{bmatrix} 2 &amp; 1 \\ 1 &amp; 2 \end{bmatrix} \begin{bmatrix} 1 \\ 1 \end{bmatrix} = \begin{bmatrix} 3 \\ 3 \end{bmatrix} = 3 \cdot \begin{bmatrix} 1 \\ 1 \end{bmatrix}
+\end{split}\]</div>
+<p>Maka:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\mathbf{v} = \begin{bmatrix} 1 \\ 1 \end{bmatrix}\)</span> adalah <strong>eigenvector</strong></p></li>
+<li><p><span class="math notranslate nohighlight">\(\lambda = 3\)</span> adalah <strong>eigenvalue</strong></p></li>
+</ul>
+<p>Kegunaan Eigenvalue dan Eigenvector</p>
+<ul class="simple">
+<li><p>Analisis sistem dinamis (fisika, ekonomi)</p></li>
+<li><p>Reduksi dimensi (seperti PCA)</p></li>
+<li><p>Pengenalan wajah/gambar</p></li>
+<li><p>Graph theory</p></li>
+<li><p>Sistem persamaan diferensial</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="c1"># Definisikan matriks A</span>
+<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+              <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]])</span>
+
+<span class="c1"># Hitung eigenvalue dan eigenvector</span>
+<span class="n">eigenvalues</span><span class="p">,</span> <span class="n">eigenvectors</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">eig</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+
+<span class="c1"># Tampilkan hasil</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Matriks A:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Eigenvalue:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">eigenvalues</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Eigenvector (kolom-kolom):&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">eigenvectors</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Matriks A:
+[[2 1]
+ [1 2]]
+
+Eigenvalue:
+[3. 1.]
+
+Eigenvector (kolom-kolom):
+[[ 0.70710678 -0.70710678]
+ [ 0.70710678  0.70710678]]
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Apakah Eigenvector Tersebut Ortogonal dan Ortonormal?</strong></p>
+<p>Diberikan dua buah eigenvector hasil dari dekomposisi eigen:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+v_1 = \begin{bmatrix} \frac{1}{\sqrt{2}} \\[6pt] \frac{1}{\sqrt{2}} \end{bmatrix}, \quad
+v_2 = \begin{bmatrix} -\frac{1}{\sqrt{2}} \\[6pt] \frac{1}{\sqrt{2}} \end{bmatrix}
+\end{split}\]</div>
+<hr class="docutils" />
+<section id="apakah-ortogonal">
+<h2>1. Apakah <strong>ortogonal</strong>?<a class="headerlink" href="#apakah-ortogonal" title="Link to this heading">#</a></h2>
+<p>Kita hitung hasil dot product:</p>
+<div class="math notranslate nohighlight">
+\[
+v_1 \cdot v_2 = \left( \frac{1}{\sqrt{2}} \right)\left( -\frac{1}{\sqrt{2}} \right) + \left( \frac{1}{\sqrt{2}} \right)\left( \frac{1}{\sqrt{2}} \right)
+= -\frac{1}{2} + \frac{1}{2} = 0
+\]</div>
+<p>Karena <span class="math notranslate nohighlight">\(v_1 \cdot v_2 = 0\)</span>, maka:</p>
+<div class="math notranslate nohighlight">
+\[
+\text{v}_1 \text{ dan } \text{v}_2 \text{ saling ortogonal}
+\]</div>
+<hr class="docutils" />
+</section>
+<section id="apakah-ortonormal">
+<h2>2. Apakah <strong>ortonormal</strong>?<a class="headerlink" href="#apakah-ortonormal" title="Link to this heading">#</a></h2>
+<p>Hitung panjang (norma) masing-masing vektor:</p>
+<div class="math notranslate nohighlight">
+\[
+\|v_1\| = \sqrt{ \left( \frac{1}{\sqrt{2}} \right)^2 + \left( \frac{1}{\sqrt{2}} \right)^2 }
+= \sqrt{ \frac{1}{2} + \frac{1}{2} } = \sqrt{1} = 1
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\|v_2\| = \sqrt{ \left( -\frac{1}{\sqrt{2}} \right)^2 + \left( \frac{1}{\sqrt{2}} \right)^2 }
+= \sqrt{ \frac{1}{2} + \frac{1}{2} } = \sqrt{1} = 1
+\]</div>
+<p>Karena kedua vektor saling ortogonal dan bernorma 1, maka:</p>
+<div class="math notranslate nohighlight">
+\[
+\text{v}_1 \text{ dan } \text{v}_2 \text{ adalah ortonormal}
+\]</div>
+<hr class="docutils" />
+</section>
+<section id="kesimpulan">
+<h2>Kesimpulan:<a class="headerlink" href="#kesimpulan" title="Link to this heading">#</a></h2>
+<p>Dua eigenvector dari matriks</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+A = \begin{bmatrix} 2 &amp; 1 \\ 1 &amp; 2 \end{bmatrix}
+\end{split}\]</div>
+<p>adalah:</p>
+<ul class="simple">
+<li><p><strong>Ortogonal</strong> karena <span class="math notranslate nohighlight">\(v_1 \cdot v_2 = 0\)</span></p></li>
+<li><p><strong>Ortonormal</strong> karena <span class="math notranslate nohighlight">\(\|v_1\| = \|v_2\| = 1\)</span></p></li>
+</ul>
+</section>
+<section id="mencari-eigenvalue-dan-eigenvector">
+<h2>Mencari Eigenvalue dan Eigenvector<a class="headerlink" href="#mencari-eigenvalue-dan-eigenvector" title="Link to this heading">#</a></h2>
+<hr class="docutils" />
+<p><img alt="image.png" src="data:image/png;base64,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" /></p>
+<p>Diberikan matriks:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+A = \begin{bmatrix} 2 &amp; 1 \\ 1 &amp; 2 \end{bmatrix}
+\end{split}\]</div>
+<p>Langkah 1: Cari eigenvalue (<span class="math notranslate nohighlight">\(\lambda\)</span>)</p>
+<p>Kita gunakan persamaan karakteristik:</p>
+<div class="math notranslate nohighlight">
+\[
+\det(A - \lambda I) = 0
+\]</div>
+<p>Hitung:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align*}
+\det \left( \begin{bmatrix} 2 &amp; 1 \\ 1 &amp; 2 \end{bmatrix} - \lambda \begin{bmatrix} 1 &amp; 0 \\ 0 &amp; 1 \end{bmatrix} \right)
+&amp;= \det \left( \begin{bmatrix} 2 - \lambda &amp; 1 \\ 1 &amp; 2 - \lambda \end{bmatrix} \right) \\
+&amp;= (2 - \lambda)^2 - 1 = 0 \\
+&amp;= \lambda^2 - 4\lambda + 3 = 0
+\end{align*}
+\end{split}\]</div>
+<p>Penyelesaian:</p>
+<div class="math notranslate nohighlight">
+\[
+\lambda = 1, \quad \lambda = 3
+\]</div>
+<p>Langkah 2: Cari eigenvector untuk setiap eigenvalue
+Untuk <span class="math notranslate nohighlight">\(\lambda = 1\)</span>:</p>
+<p>Kita selesaikan:</p>
+<div class="math notranslate nohighlight">
+\[
+(A - I)\mathbf{v} = 0
+\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\left( \begin{bmatrix} 2 &amp; 1 \\ 1 &amp; 2 \end{bmatrix} - \begin{bmatrix} 1 &amp; 0 \\ 0 &amp; 1 \end{bmatrix} \right) \begin{bmatrix} x \\ y \end{bmatrix} = \begin{bmatrix} 1 &amp; 1 \\ 1 &amp; 1 \end{bmatrix} \begin{bmatrix} x \\ y \end{bmatrix} = \begin{bmatrix} 0 \\ 0 \end{bmatrix}
+\end{split}\]</div>
+<p>Sehingga:</p>
+<div class="math notranslate nohighlight">
+\[
+x + y = 0 \Rightarrow y = -x
+\]</div>
+<p>Eigenvector-nya:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\mathbf{v}_1 = \begin{bmatrix} 1 \\ -1 \end{bmatrix}
+\end{split}\]</div>
+<p>Untuk <span class="math notranslate nohighlight">\(\lambda = 3\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+(A - 3I)\mathbf{v} = 0
+\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\left( \begin{bmatrix} 2 &amp; 1 \\ 1 &amp; 2 \end{bmatrix} - \begin{bmatrix} 3 &amp; 0 \\ 0 &amp; 3 \end{bmatrix} \right) \begin{bmatrix} x \\ y \end{bmatrix} = \begin{bmatrix} -1 &amp; 1 \\ 1 &amp; -1 \end{bmatrix} \begin{bmatrix} x \\ y \end{bmatrix} = \begin{bmatrix} 0 \\ 0 \end{bmatrix}
+\end{split}\]</div>
+<p>Sehingga:</p>
+<div class="math notranslate nohighlight">
+\[
+- x + y = 0 \Rightarrow y = x
+\]</div>
+<p>Eigenvector-nya:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\mathbf{v}_2 = \begin{bmatrix} 1 \\ 1 \end{bmatrix}
+\end{split}\]</div>
+<div style="display: flex; align-items: flex-start; gap: 20px;">
+<div style="flex: 1;">
+<p>Diberikan matriks:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+A = \begin{bmatrix} 2 &amp; 1 \\ 1 &amp; 2 \end{bmatrix}
+\end{split}\]</div>
+<p>Eigenvalue dan eigenvector-nya dihitung sebagai berikut…</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\lambda_1 = 1\)</span> dengan <span class="math notranslate nohighlight">\(\mathbf{v}_1 = \begin{bmatrix} 1 \\ -1 \end{bmatrix}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\lambda_2 = 3\)</span> dengan <span class="math notranslate nohighlight">\(\mathbf{v}_2 = \begin{bmatrix} 1 \\ 1 \end{bmatrix}\)</span></p></li>
+</ul>
+<p>Kesimpulan</p>
+<p>Matriks <span class="math notranslate nohighlight">\(A\)</span> memiliki:</p>
+<ul class="simple">
+<li><p><strong>Eigenvalue</strong>: <span class="math notranslate nohighlight">\(1\)</span> dan <span class="math notranslate nohighlight">\(3\)</span></p></li>
+<li><p><strong>Eigenvector</strong>:</p>
+<ul>
+<li><p>Untuk <span class="math notranslate nohighlight">\(\lambda = 1\)</span>: <span class="math notranslate nohighlight">\(\begin{bmatrix} 1 \\ -1 \end{bmatrix}\)</span></p></li>
+<li><p>Untuk <span class="math notranslate nohighlight">\(\lambda = 3\)</span>: <span class="math notranslate nohighlight">\(\begin{bmatrix} 1 \\ 1 \end{bmatrix}\)</span></p></li>
+</ul>
+</li>
+</ul>
+<p>Menentukan Eigenvalue dan Eigenvector Matriks</p>
+<div align="center">
+<p><strong>Matriks A:</strong></p>
+<p><span class="math notranslate nohighlight">\(A = \begin{bmatrix} 8 &amp; -10 \\ 5 &amp; -7 \end{bmatrix}\)</span></p>
+</div>
+<hr class="docutils" />
+<p>Langkah 1: Mencari Eigenvalue</p>
+<p>Eigenvalue diperoleh dari persamaan karakteristik:</p>
+<p><span class="math notranslate nohighlight">\(\det(A - \lambda I) = 0\)</span></p>
+<p>Hitung:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+A - \lambda I =
+\begin{bmatrix}
+8 - \lambda &amp; -10 \\
+5 &amp; -7 - \lambda
+\end{bmatrix}
+\end{split}\]</div>
+<p>Determinannya:</p>
+<p><span class="math notranslate nohighlight">\(
+(8 - \lambda)(-7 - \lambda) - (-10)(5) = 0
+\)</span></p>
+<p><span class="math notranslate nohighlight">\(
+\Rightarrow (8 - \lambda)(-7 - \lambda) + 50 = 0
+\)</span></p>
+<p><span class="math notranslate nohighlight">\(
+\Rightarrow \lambda^2 - \lambda - 6 = 0
+\)</span></p>
+<p>Faktorkan:</p>
+<p><span class="math notranslate nohighlight">\(
+(\lambda - 3)(\lambda + 2) = 0
+\)</span></p>
+<p><strong>Maka diperoleh dua eigenvalue:</strong></p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\lambda_1 = 3\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\lambda_2 = -2\)</span></p></li>
+</ul>
+<hr class="docutils" />
+<p>Langkah 2: Mencari Eigenvector</p>
+<p>Untuk <span class="math notranslate nohighlight">\(\lambda_1 = 3\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+A - 3I = \begin{bmatrix} 5 &amp; -10 \\ 5 &amp; -10 \end{bmatrix}
+\end{split}\]</div>
+<p>Selesaikan sistem:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{bmatrix} 5 &amp; -10 \\ 5 &amp; -10 \end{bmatrix}
+\begin{bmatrix} x \\ y \end{bmatrix}
+=
+\begin{bmatrix} 0 \\ 0 \end{bmatrix}
+\end{split}\]</div>
+<p><span class="math notranslate nohighlight">\(5x - 10y = 0 \Rightarrow x = 2y\)</span></p>
+<p>Misal <span class="math notranslate nohighlight">\(y = 1 \Rightarrow x = 2\)</span></p>
+<p><strong>Eigenvector untuk <span class="math notranslate nohighlight">\(\lambda = 3\)</span>:</strong></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\vec{v}_1 = \begin{bmatrix} 2 \\ 1 \end{bmatrix}
+\end{split}\]</div>
+<hr class="docutils" />
+<p>Untuk <span class="math notranslate nohighlight">\(\lambda_2 = -2\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+A + 2I = \begin{bmatrix} 10 &amp; -10 \\ 5 &amp; -5 \end{bmatrix}
+\end{split}\]</div>
+<p>Selesaikan sistem:</p>
+<p><span class="math notranslate nohighlight">\(
+10x - 10y = 0 \Rightarrow x = y
+\)</span></p>
+<p>Misal <span class="math notranslate nohighlight">\(x = 1 \Rightarrow y = 1\)</span></p>
+<p><strong>Eigenvector untuk <span class="math notranslate nohighlight">\(\lambda = -2\)</span>:</strong></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\vec{v}_2 = \begin{bmatrix} 1 \\ 1 \end{bmatrix}
+\end{split}\]</div>
+<hr class="docutils" />
+<div align="center">
+<p>Kesimpulan</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Eigenvalue</p></th>
+<th class="head"><p>Eigenvector</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\lambda = 3\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\vec{v}_1 = \begin{bmatrix} 2 \\ 1 \end{bmatrix}\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(\lambda = -2\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\vec{v}_2 = \begin{bmatrix} 1 \\ 1 \end{bmatrix}\)</span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="c1"># Matriks A</span>
+<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">8</span><span class="p">,</span> <span class="o">-</span><span class="mi">10</span><span class="p">],</span>
+              <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="o">-</span><span class="mi">7</span><span class="p">]])</span>
+
+<span class="c1"># Hitung eigenvalues dan eigenvectors</span>
+<span class="n">eigenvalues</span><span class="p">,</span> <span class="n">eigenvectors</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">eig</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Eigenvalues:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">eigenvalues</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Eigenvectors (per kolom):&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">eigenvectors</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Eigenvalues:
+[ 3. -2.]
+
+Eigenvectors (per kolom):
+[[0.89442719 0.70710678]
+ [0.4472136  0.70710678]]
+</pre></div>
+</div>
+</div>
+</div>
+<section id="definisi-ortogonal-dan-ortonormal">
+<h3>Definisi Ortogonal dan Ortonormal<a class="headerlink" href="#definisi-ortogonal-dan-ortonormal" title="Link to this heading">#</a></h3>
+<p>Misalkan kita memiliki dua vektor <span class="math notranslate nohighlight">\(v_1\)</span> dan <span class="math notranslate nohighlight">\(v_2\)</span>.</p>
+<hr class="docutils" />
+<section id="ortogonal">
+<h4>Ortogonal<a class="headerlink" href="#ortogonal" title="Link to this heading">#</a></h4>
+<p><span class="math notranslate nohighlight">\(v_1\)</span> dan <span class="math notranslate nohighlight">\(v_2\)</span> dikatakan <strong>ortogonal</strong> jika hasil perkalian titik (dot product) mereka adalah nol:</p>
+<div class="math notranslate nohighlight">
+\[
+v_1 \cdot v_2 = 0
+\]</div>
+</section>
+<hr class="docutils" />
+<section id="ortonormal">
+<h4>Ortonormal<a class="headerlink" href="#ortonormal" title="Link to this heading">#</a></h4>
+<p><span class="math notranslate nohighlight">\(v_1\)</span> dan <span class="math notranslate nohighlight">\(v_2\)</span> dikatakan <strong>ortonormal</strong> jika:</p>
+<ol class="arabic simple">
+<li><p>Mereka ortogonal:</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[
+v_1 \cdot v_2 = 0
+\]</div>
+<ol class="arabic simple" start="2">
+<li><p>Masing-masing vektor memiliki panjang (norma) satu:</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[
+\|v_1\| = \sqrt{v_1 \cdot v_1} = 1, \quad \|v_2\| = \sqrt{v_2 \cdot v_2} = 1
+\]</div>
+</section>
+<hr class="docutils" />
+<section id="contoh-pada-eigenvector">
+<h4>Contoh pada eigenvector<a class="headerlink" href="#contoh-pada-eigenvector" title="Link to this heading">#</a></h4>
+<p>Misalkan:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+v_1 = \begin{bmatrix} 2 \\ 1 \end{bmatrix}, \quad v_2 = \begin{bmatrix} 1 \\ 1 \end{bmatrix}
+\end{split}\]</div>
+<p>Hitung dot product:</p>
+<div class="math notranslate nohighlight">
+\[
+v_1 \cdot v_2 = 2 \times 1 + 1 \times 1 = 3 \neq 0
+\]</div>
+<p>Jadi, <span class="math notranslate nohighlight">\(v_1\)</span> dan <span class="math notranslate nohighlight">\(v_2\)</span> <strong>tidak ortogonal</strong>.</p>
+</section>
+<hr class="docutils" />
+<section id="normalisasi-vektor">
+<h4>Normalisasi vektor<a class="headerlink" href="#normalisasi-vektor" title="Link to this heading">#</a></h4>
+<p>Untuk mendapatkan vektor ortonormal, vektor harus dinormalisasi menjadi panjang 1:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\hat{v}_1 = \frac{v_1}{\|v_1\|} = \frac{1}{\sqrt{2^2 + 1^2}} \begin{bmatrix} 2 \\ 1 \end{bmatrix} = \frac{1}{\sqrt{5}} \begin{bmatrix} 2 \\ 1 \end{bmatrix}
+\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\hat{v}_2 = \frac{v_2}{\|v_2\|} = \frac{1}{\sqrt{1^2 + 1^2}} \begin{bmatrix} 1 \\ 1 \end{bmatrix} = \frac{1}{\sqrt{2}} \begin{bmatrix} 1 \\ 1 \end{bmatrix}
+\end{split}\]</div>
+</section>
+<hr class="docutils" />
+<section id="apakah-hat-v-1-dan-hat-v-2-ortogonal">
+<h4>Apakah <span class="math notranslate nohighlight">\(\hat{v}_1\)</span> dan <span class="math notranslate nohighlight">\(\hat{v}_2\)</span> ortogonal?<a class="headerlink" href="#apakah-hat-v-1-dan-hat-v-2-ortogonal" title="Link to this heading">#</a></h4>
+<p>Hitung dot product:</p>
+<div class="math notranslate nohighlight">
+\[
+\hat{v}_1 \cdot \hat{v}_2 = \frac{1}{\sqrt{5}} \frac{1}{\sqrt{2}} (2 \times 1 + 1 \times 1) = \frac{3}{\sqrt{10}} \neq 0
+\]</div>
+<p>Maka, mereka <strong>tidak ortogonal</strong>, sehingga <strong>tidak ortonormal</strong>.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="id1">
+<h3>Kesimpulan<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<p>Eigenvector matriks di atas <strong>tidak ortogonal maupun ortonormal secara langsung</strong>.<br />
+Untuk mendapatkan basis ortonormal, dapat dilakukan proses Gram-Schmidt.</p>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apakah-ortogonal">1. Apakah <strong>ortogonal</strong>?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apakah-ortonormal">2. Apakah <strong>ortonormal</strong>?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kesimpulan">Kesimpulan:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mencari-eigenvalue-dan-eigenvector">Mencari Eigenvalue dan Eigenvector</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#definisi-ortogonal-dan-ortonormal">Definisi Ortogonal dan Ortonormal</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ortogonal">Ortogonal</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ortonormal">Ortonormal</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-pada-eigenvector">Contoh pada eigenvector</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#normalisasi-vektor">Normalisasi vektor</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#apakah-hat-v-1-dan-hat-v-2-ortogonal">Apakah <span class="math notranslate nohighlight">\(\hat{v}_1\)</span> dan <span class="math notranslate nohighlight">\(\hat{v}_2\)</span> ortogonal?</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Kesimpulan</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The Jupyter Book community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
